@@ -159,6 +159,69 @@ function nextDhikr() {
 }
 
 </script>
+    
+<section style="padding:20px; text-align:center; color:white;">
+
+<h2 style="color:#d4af37;">🤲 أدعية وأذكار إضافية</h2>
+
+<div style="background:#065f46; padding:18px; margin:15px 0; border:1px solid #d4af37; border-radius:15px;">
+<h3>رضيت بالله ربًا</h3>
+<p>رَضِيتُ بِاللَّهِ رَبًّا، وَبِالإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا.</p>
+<p>عدد التكرار: 3 مرات</p>
+<p>المصدر: أبو داود 5072، والترمذي 3389.</p>
+<button onclick="countDhikr(this,3)">اضغط للعدّ: 0 / 3</button>
+</div>
+
+<div style="background:#065f46; padding:18px; margin:15px 0; border:1px solid #d4af37; border-radius:15px;">
+<h3>ذكر الحفظ</h3>
+<p>بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ، وَهُوَ السَّمِيعُ الْعَلِيمُ.</p>
+<p>عدد التكرار: 3 مرات</p>
+<p>المصدر: سنن أبي داود 5088.</p>
+<button onclick="countDhikr(this,3)">اضغط للعدّ: 0 / 3</button>
+</div>
+
+<div style="background:#065f46; padding:18px; margin:15px 0; border:1px solid #d4af37; border-radius:15px;">
+<h3>دعاء العفو والعافية</h3>
+<p>اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي.</p>
+<p>عدد التكرار: مرة واحدة</p>
+<p>المصدر: سنن أبي داود 5074.</p>
+<button onclick="countDhikr(this,1)">اضغط للعدّ: 0 / 1</button>
+</div>
+
+<div style="background:#065f46; padding:18px; margin:15px 0; border:1px solid #d4af37; border-radius:15px;">
+<h3>دعاء العافية في البدن</h3>
+<p>اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَهَ إِلَّا أَنْتَ.</p>
+<p>عدد التكرار: 3 مرات</p>
+<p>المصدر: سنن أبي داود 5090.</p>
+<button onclick="countDhikr(this,3)">اضغط للعدّ: 0 / 3</button>
+</div>
+
+<div style="background:#065f46; padding:18px; margin:15px 0; border:1px solid #d4af37; border-radius:15px;">
+<h3>التسبيح</h3>
+<p>سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.</p>
+<p>عدد التكرار: 100 مرة</p>
+<p>المصدر: صحيح مسلم 2692.</p>
+<button onclick="countDhikr(this,100)">اضغط للعدّ: 0 / 100</button>
+</div>
+
+</section>
+
+<script>
+function countDhikr(button, max) {
+  let count = Number(button.dataset.count || 0);
+
+  if (count < max) {
+    count++;
+    button.dataset.count = count;
+    button.textContent = "اضغط للعدّ: " + count + " / " + max;
+  }
+
+  if (count === max) {
+    button.textContent = "اكتمل الذكر ✓ " + count + " / " + max;
+  }
+}
+</script>
+
 
 </body>
 </html>
