@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>أذكاري | Athkari</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #063b30;
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 25px 15px;
+    background: #042b24;
+    border-bottom: 2px solid #d6ad54;
+}
+
+header h1 {
+    color: #e5bd66;
+    font-size: 32px;
+    margin: 10px;
+}
+
+header p {
+    color: #d8d8d8;
+}
+
+.language {
+    background: #d6ad54;
+    color: #063b30;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 45px 15px 30px;
+}
+
+.hero h2 {
+    color: #e5bd66;
+    font-size: 27px;
+}
+
+.hero p {
+    line-height: 1.9;
+    color: #e4e4e4;
+}
+
+.cards {
+    padding: 15px;
+    display: grid;
+    gap: 18px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.card {
+    background: #105344;
+    border: 1px solid #d6ad54;
+    border-radius: 18px;
+    padding: 25px 15px;
+}
+
+.card h3 {
+    color: #e5bd66;
+    font-size: 23px;
+}
+
+.card p {
+    color: #eeeeee;
+}
+
+.card button {
+    background: #d6ad54;
+    color: #063b30;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 35px;
+    padding: 20px;
+    color: #d6ad54;
+    border-top: 1px solid #d6ad54;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌙 أذكاري</h1>
+    <p>Athkari - My Daily Remembrance</p>
+
+    <button class="language" onclick="changeLanguage()">
+        English
+    </button>
+</header>
+
+<section class="hero">
+    <h2 id="welcome">مرحباً بك في أذكاري</h2>
+
+    <p id="description">
+        اجعل ذكر الله جزءاً من يومك،
+        واملأ قلبك بالطمأنينة.
+    </p>
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <h3 id="morning">🌅 أذكار الصباح</h3>
+        <p id="morningDesc">ابدأ يومك بذكر الله</p>
+        <button onclick="window.location.href='morning.html'"
+id="morningBtn">افتح الأذكار</button>
+    </div>
+
+    <div class="card">
+        <h3 id="evening">🌙 أذكار المساء</h3>
+        <p id="eveningDesc">اختم يومك بذكر الله</p>
+        <button onclick="window.location.href='evening.html'"
+id="eveningBtn">افتح الأذكار</button>
+    </div>
+
+</section>
+
+<footer>
+    <p>أذكاري | Athkari</p>
+    <p id="footerText">نسأل الله أن يجعلنا من الذاكرين</p>
+</footer>
+
+<script>
+let arabic = true;
+
+function changeLanguage() {
+    arabic = !arabic;
+
+    document.documentElement.lang =
+        arabic ? "ar" : "en";
+
+    document.documentElement.dir =
+        arabic ? "rtl" : "ltr";
+
+    document.querySelector(".language").textContent =
+        arabic ? "English" : "العربية";
+
+    document.getElementById("welcome").textContent =
+        arabic ? "مرحباً بك في أذكاري" : "Welcome to Athkari";
+
+    document.getElementById("description").textContent =
+        arabic
+        ? "اجعل ذكر الله جزءاً من يومك، واملأ قلبك بالطمأنينة."
+        : "Make remembrance of Allah part of your day.";
+
+    document.getElementById("morning").textContent =
+        arabic ? "🌅 أذكار الصباح" : "🌅 Morning Adhkar";
+
+    document.getElementById("evening").textContent =
+        arabic ? "🌙 أذكار المساء" : "🌙 Evening Adhkar";
+
+    document.getElementById("morningDesc").textContent =
+        arabic ? "ابدأ يومك بذكر الله" : "Start your day with remembrance";
+
+    document.getElementById("eveningDesc").textContent =
+        arabic ? "اختم يومك بذكر الله" : "End your day with remembrance";
+
+    document.getElementById("morningBtn").textContent =
+        arabic ? "افتح الأذكار" : "Open Adhkar";
+
+    document.getElementById("eveningBtn").textContent =
+        arabic ? "افتح الأذكار" : "Open Adhkar";
+
+    document.getElementById("footerText").textContent =
+        arabic ? "نسأل الله أن يجعلنا من الذاكرين" : "May Allah make us among those who remember Him";
+}
+</script>
+  <div style="text-align:center; margin:20px;">
+  <a href="tasbih.html"
+     style="background:#d4af37; color:#064e3b;
+     padding:15px 25px; border-radius:12px;
+     text-decoration:none; display:inline-block;">
+    المسبحة الإلكترونية
+  </a>
+  </div>
+
+</body>
+</html>

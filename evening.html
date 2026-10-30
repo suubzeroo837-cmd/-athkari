@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أذكار المساء | Athkari</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #063b30;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+    background: #042b24;
+    border-bottom: 2px solid #d6ad54;
+    border-radius: 15px;
+}
+
+h1, h2 {
+    color: #e5bd66;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 15px;
+    color: #e5bd66;
+    text-decoration: none;
+}
+
+.card {
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 25px 18px;
+    background: #105344;
+    border: 1px solid #d6ad54;
+    border-radius: 18px;
+}
+
+.dhikr {
+    font-size: 23px;
+    line-height: 2;
+    margin: 25px 0;
+}
+
+button {
+    background: #d6ad54;
+    color: #063b30;
+    border: none;
+    border-radius: 12px;
+    padding: 13px 25px;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 7px;
+}
+
+.count {
+    color: #e5bd66;
+    font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌙 أذكار المساء</h1>
+    <p>Evening Adhkar</p>
+    <a class="back" href="index.html">العودة للرئيسية ←</a>
+</header>
+
+<div class="card">
+
+    <h2 id="number">الذكر 1 من 3</h2>
+
+    <p class="dhikr" id="text"></p>
+
+    <p id="source"></p>
+
+    <p class="count" id="counter"></p>
+
+    <button onclick="repeatDhikr()">تم التسبيح ✓</button>
+
+    <br>
+
+    <button onclick="nextDhikr()">الذكر التالي ←</button>
+
+</div>
+
+<script>
+
+const adhkar = [
+{
+    text: "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ.",
+    times: 1,
+    source: "صحيح مسلم"
+},
+{
+    text: "اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ.",
+    times: 1,
+    source: "سنن أبي داود والترمذي"
+},
+{
+    text: "رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا.",
+    times: 3,
+    source: "سنن أبي داود والترمذي"
+}
+];
+
+let current = 0;
+let count = 0;
+
+function showDhikr() {
+    let item = adhkar[current];
+
+    document.getElementById("number").textContent =
+        "الذكر " + (current + 1) + " من " + adhkar.length;
+
+    document.getElementById("text").textContent = item.text;
+
+    document.getElementById("source").textContent =
+        "المصدر: " + item.source;
+
+    document.getElementById("counter").textContent =
+        "التكرار: " + count + " / " + item.times;
+}
+
+function repeatDhikr() {
+    if (count < adhkar[current].times) {
+        count++;
+        showDhikr();
+    }
+}
+
+function nextDhikr() {
+    if (current < adhkar.length - 1) {
+        current++;
+        count = 0;
+        showDhikr();
+    } else {
+        alert("بارك الله فيك! أكملت أذكار المساء التجريبية.");
+    }
+}
+
+showDhikr();
+
+</script>
+
+</body>
+</html>

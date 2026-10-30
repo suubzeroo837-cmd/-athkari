@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المسبحة الإلكترونية | أذكاري</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  background: #064e3b;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #065f46;
+  border: 2px solid #d4af37;
+  border-radius: 20px;
+}
+
+h1 {
+  color: #facc15;
+}
+
+select, button {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+select {
+  background: white;
+  color: #064e3b;
+}
+
+#count {
+  font-size: 65px;
+  color: #facc15;
+  margin: 25px;
+}
+
+#add {
+  background: #d4af37;
+  color: #064e3b;
+  font-weight: bold;
+}
+
+#reset {
+  background: white;
+  color: #064e3b;
+}
+
+a {
+  display: block;
+  margin-top: 20px;
+  color: #facc15;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>المسبحة الإلكترونية</h1>
+<p>اختر الذكر وابدأ التسبيح</p>
+
+<select id="dhikr">
+  <option>سبحان الله</option>
+  <option>الحمد لله</option>
+  <option>الله أكبر</option>
+  <option>أستغفر الله</option>
+</select>
+
+<div id="count">0</div>
+
+<button id="add" onclick="increase()">اضغط للتسبيح</button>
+<button id="reset" onclick="resetCount()">إعادة العداد</button>
+
+<a href="index.html">العودة إلى الصفحة الرئيسية</a>
+
+</div>
+
+<script>
+let count = 0;
+
+function increase() {
+  count++;
+  document.getElementById("count").textContent = count;
+}
+
+function resetCount() {
+  count = 0;
+  document.getElementById("count").textContent = count;
+}
+</script>
+
+</body>
+</html>
